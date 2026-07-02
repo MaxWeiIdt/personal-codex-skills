@@ -1,0 +1,6 @@
+# Local Gemini Review Gate state
+.codex/review/
+
+# Local editor/system noise
+.DS_Store
+Thumbs.db

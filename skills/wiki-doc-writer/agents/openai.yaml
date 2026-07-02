@@ -1,0 +1,4 @@
+﻿interface:
+  display_name: "Wiki 技術文件撰寫"
+  short_description: "依 Pro SDK、Console 或 MVC/Razor 型態產出維護導向 wiki 文件。"
+  default_prompt: "使用 $wiki-doc-writer 為這段程式碼或專案內容撰寫維護導向 wiki 文件。"

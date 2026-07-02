@@ -1,0 +1,4 @@
+interface:
+  display_name: "Debug 決策樹"
+  short_description: "依錯誤類型與技術棧進行結構化除錯與根因分析。"
+  default_prompt: "使用 $debug-tree 追查這個錯誤的根因，並提出最小修復與驗證方式。"
