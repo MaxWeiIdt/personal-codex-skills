@@ -1,0 +1,4 @@
+interface:
+  display_name: "測試案例產生"
+  short_description: "依程式碼與風險產生單元、整合、資料處理與排程測試建議。"
+  default_prompt: "使用 $test-generator 幫我為這段程式或這次修改規劃測試案例。"

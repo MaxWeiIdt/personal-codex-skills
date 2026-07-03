@@ -1,0 +1,4 @@
+interface:
+  display_name: "PR 描述撰寫"
+  short_description: "根據 diff 產生 GitHub Pull Request 摘要、驗證與風險說明。"
+  default_prompt: "使用 $pr-description-writer 根據目前修改幫我撰寫 GitHub PR 描述。"

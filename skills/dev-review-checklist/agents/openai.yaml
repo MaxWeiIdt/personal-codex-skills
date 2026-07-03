@@ -1,0 +1,4 @@
+interface:
+  display_name: "開發審查 Checklist"
+  short_description: "依 ArcGIS、.NET、MVC、Python、MSSQL 專案慣例檢查風險。"
+  default_prompt: "使用 $dev-review-checklist 幫我審查這次修改的 bug、維護風險與測試缺口。"

@@ -9,6 +9,11 @@
 | `tech-decision-tree` | 協助依任務需求選擇技術組合，例如 `C# Console`、`MVC/Razor`、`React`、`ArcGIS Pro SDK`、`ArcGIS REST API`、`ArcGIS Experience`、`Python`、`MSSQL`。 |
 | `wiki-doc-writer` | 依程式特徵撰寫技術 wiki 文件，支援 ArcGIS Pro SDK、Console/批次程式、MVC/Razor Web 系統、Python 腳本與資料處理專案。 |
 | `debug-tree` | 依錯誤類型進行除錯與根因分析，涵蓋 build/runtime/logic/performance、MVC/Razor、ArcGIS、MSSQL、Console 排程等情境。 |
+| `dev-review-checklist` | 依 ArcGIS、.NET、MVC/Razor、Console、Python、MSSQL 專案慣例進行 code review 與風險檢查。 |
+| `pr-description-writer` | 根據 diff 或修改內容產生 GitHub Pull Request 描述、驗證方式與風險說明。 |
+| `adr-writer` | 將技術選型、架構取捨與方案比較整理成 ADR 技術決策紀錄。 |
+| `environment-setup-writer` | 整理專案必要軟體、設定檔、啟動方式、外部相依與環境驗證清單。 |
+| `test-generator` | 依程式碼與風險產生單元測試、整合測試、資料處理與排程測試建議。 |
 
 ## Repository Structure
 
@@ -17,8 +22,13 @@ personal-codex-skills/
 |-- AGENTS.md
 |-- README.md
 |-- skills/
+|   |-- adr-writer/
 |   |-- debug-tree/
+|   |-- dev-review-checklist/
+|   |-- environment-setup-writer/
+|   |-- pr-description-writer/
 |   |-- tech-decision-tree/
+|   |-- test-generator/
 |   `-- wiki-doc-writer/
 `-- .gitignore
 ```
@@ -78,6 +88,11 @@ $env:PYTHONUTF8='1'
 python "$env:CODEX_HOME/skills/.system/skill-creator/scripts/quick_validate.py" skills/tech-decision-tree
 python "$env:CODEX_HOME/skills/.system/skill-creator/scripts/quick_validate.py" skills/wiki-doc-writer
 python "$env:CODEX_HOME/skills/.system/skill-creator/scripts/quick_validate.py" skills/debug-tree
+python "$env:CODEX_HOME/skills/.system/skill-creator/scripts/quick_validate.py" skills/dev-review-checklist
+python "$env:CODEX_HOME/skills/.system/skill-creator/scripts/quick_validate.py" skills/pr-description-writer
+python "$env:CODEX_HOME/skills/.system/skill-creator/scripts/quick_validate.py" skills/adr-writer
+python "$env:CODEX_HOME/skills/.system/skill-creator/scripts/quick_validate.py" skills/environment-setup-writer
+python "$env:CODEX_HOME/skills/.system/skill-creator/scripts/quick_validate.py" skills/test-generator
 ```
 
 預期輸出：

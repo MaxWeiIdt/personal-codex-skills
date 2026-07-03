@@ -1,0 +1,4 @@
+interface:
+  display_name: "ADR 技術決策紀錄"
+  short_description: "將技術選型、架構取捨與方案比較整理成 ADR。"
+  default_prompt: "使用 $adr-writer 幫我把這次技術選型整理成 ADR。"

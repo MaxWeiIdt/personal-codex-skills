@@ -1,0 +1,4 @@
+interface:
+  display_name: "環境建置文件"
+  short_description: "整理專案必要軟體、設定檔、啟動方式與環境驗證清單。"
+  default_prompt: "使用 $environment-setup-writer 幫我整理這個專案的環境建置文件。"
