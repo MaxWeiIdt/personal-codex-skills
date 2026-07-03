@@ -6,7 +6,7 @@
 
 | Skill | 用途 |
 |---|---|
-| `tech-decision-tree` | 協助依任務需求選擇技術組合，例如 `C# Console`、`MVC/Razor`、`React`、`ArcGIS Pro SDK`、`ArcGIS REST API`、`ArcGIS Experience`、`Python`、`MSSQL`。 |
+| `tech-decision-tree` | 協助依任務需求選擇技術組合，例如 `C# Console`、`MVC/Razor`、`React`、`ArcGIS Pro SDK`、`ArcGIS REST API`、`ArcGIS Experience`、Enterprise Geodatabase/SDE、`Python`、`MSSQL`。 |
 | `wiki-doc-writer` | 依程式特徵撰寫技術 wiki 文件，支援 ArcGIS Pro SDK、Console/批次程式、MVC/Razor Web 系統、Python 腳本與資料處理專案。 |
 | `debug-tree` | 依錯誤類型進行除錯與根因分析，涵蓋 build/runtime/logic/performance、MVC/Razor、ArcGIS、MSSQL、Console 排程等情境。 |
 | `dev-review-checklist` | 依 ArcGIS、.NET、MVC/Razor、Console、Python、MSSQL 專案慣例進行 code review 與風險檢查。 |
