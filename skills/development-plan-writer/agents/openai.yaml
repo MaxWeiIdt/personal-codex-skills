@@ -1,0 +1,4 @@
+interface:
+  display_name: "程式開發計畫撰寫"
+  short_description: "產出開發計畫框架，並可轉成 PM 確認用簡易流程。"
+  default_prompt: "使用 $development-plan-writer 根據技術選型、ADR 或需求內容產出開發計畫框架。"
