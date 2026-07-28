@@ -1,5 +1,15 @@
 # Personal Codex Skills
 
+## CI/CD 自動化指南
+
+本 repository 提供一份可跨專案使用的 GitHub Actions CI 與 Release 自動化指南，說明一般 .NET MVC／Console、Python，以及需要 ArcGIS Pro 或內網依賴時的 self-hosted runner 流程。
+
+- 依專案需求選擇 GitHub-hosted 或 self-hosted runner。
+- 使用 Push／Pull Request 執行 CI，使用 Tag 建立 Release 成品。
+- 包含 .NET、Python、ArcGIS Pro 的可複製 workflow 範本、Runner 建置步驟與常見問題。
+
+詳見 [GitHub Actions CI 與 Release 自動化技術指南](docs/ci-cd-automation-guide.md)。
+
 這個 repository 用來集中管理個人日常開發會用到的 Codex Skills。內容以 ArcGIS、.NET、MVC/Razor、Console 批次、MSSQL、技術文件與除錯流程為主，讓不同專案可以重複套用同一套工作方式。
 
 ## Skills
