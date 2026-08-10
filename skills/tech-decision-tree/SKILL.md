@@ -1,6 +1,6 @@
 ---
 name: tech-decision-tree
-description: "建立技術選型決策樹與架構建議，且僅使用使用者允許的技術堆疊：C# Console、MVC 全端、Python、ArcGIS Pro SDK for C#（包含 Add-in、Python、Console CoreHost）、ArcGIS Experience、ArcGIS REST API、React、HTML、Razor 與 MSSQL。當需要評估新專案需求、選擇 Web 系統、批次程式、ArcGIS Pro Add-in、Web GIS、REST 整合、Enterprise Geodatabase/SDE 直連、MSSQL GDB schema 權限，或需要說明架構判斷原因時使用。"
+description: "建立技術選型決策樹與架構建議。只在使用者明確要求評估新需求、選擇技術組合、比較架構或說明選型理由，而且方案尚未決定時使用；不要因為需求提到 ArcGIS、MSSQL、Web、批次或 API 就自動啟動。已選定方案的 ADR 請使用 adr-writer，資料流程細節請使用 gis-data-pipeline-ops。"
 ---
 
 # 技術選型決策樹
@@ -108,3 +108,15 @@ description: "建立技術選型決策樹與架構建議，且僅使用使用者
 - 需求資訊不足時，列出使用的假設。
 - 視需求補上維護風險，例如 GIS schema 變更、dbo/sde schema 混用、REST service 可用性、排程可觀測性、MSSQL schema 耦合、ArcGIS Pro runtime 限制。
 - 除非使用者明確改成要實作，否則不要寫程式碼。
+
+## 交接資訊
+
+選型結尾固定加入以下區塊；這只是手動交接摘要，不代表自動啟動下一個 Skill：
+
+- 目前階段：需求分析、選型草案或方案已確認。
+- 已完成／已確認：推薦技術組合、判斷路徑與不採用方案。
+- 尚未確認／待決：會改變選型的需求、資料來源或環境限制。
+- 重要假設：UI、執行模式、GIS 深度、資料核心與部署前提。
+- 主要風險：架構、整合、資料、維護與部署風險。
+- 建議下一步：例如使用 `adr-writer` 記錄決策，或使用 `gis-data-pipeline-ops` 細化資料流程。
+- 相關產物：選型文件、決策樹、比較表與待確認問題。

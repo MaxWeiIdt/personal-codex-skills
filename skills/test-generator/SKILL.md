@@ -1,6 +1,6 @@
 ---
 name: test-generator
-description: "根據既有程式碼、diff 或功能描述規劃並產生測試案例。使用於使用者要求產生測試、補單元測試、整合測試、測試案例、coverage 缺口、MVC Controller 測試、Console service 測試、Python 資料處理測試、MSSQL 測試資料、ArcGIS REST API 測試、排程流程測試或 mock data 時。"
+description: "根據既有程式碼、diff 或功能描述規劃並產生測試案例。只在使用者明確要求測試案例、補測試、單元／整合測試、coverage 缺口、mock data 或測試命令時使用；不要因為程式有修改、資料流程或 API 就自動啟動。實際錯誤分析請使用 debug-tree，程式碼審查請使用 dev-review-checklist。"
 ---
 
 # Test Generator
@@ -35,3 +35,15 @@ description: "根據既有程式碼、diff 或功能描述規劃並產生測試�
 3. Mock Data
 4. Commands
 5. Remaining Risk
+
+## 交接資訊
+
+測試規劃結尾固定加入以下區塊；這只是手動交接摘要，不代表自動啟動下一個 Skill：
+
+- 目前階段：測試規劃、測試撰寫、執行中或已完成。
+- 已完成／已確認：測試範圍、案例、Mock Data 與執行命令。
+- 尚未確認／待決：未覆蓋的分支、測試資料、外部服務或環境需求。
+- 重要假設：輸入資料、資料庫、API、ArcGIS 與排程環境前提。
+- 主要風險：未覆蓋的資料一致性、重跑、權限、效能或整合風險。
+- 建議下一步：實作測試、執行測試，或交給 `dev-review-checklist` 檢查。
+- 相關產物：測試檔案、Mock Data、命令、Coverage 與測試結果。

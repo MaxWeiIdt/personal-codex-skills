@@ -1,6 +1,6 @@
 ---
 name: pr-description-writer
-description: "根據 git diff、commit、修改檔案或使用者描述撰寫 Pull Request 描述。使用於使用者要求 PR 描述、PR description、pull request 說明、幫我寫 PR、整理變更摘要、GitHub PR 內容、合併請求描述，或需要產生變更目的、修改內容、驗證方式、風險、部署注意事項與 reviewer checklist 時。"
+description: "根據 git diff、commit 或使用者描述撰寫 Pull Request 描述。只在使用者明確要求 PR description、Pull Request 說明、變更摘要、reviewer checklist 或合併請求內容時使用；不要因為工作區存在 diff 或剛完成修改就自動啟動。程式碼風險審查請使用 dev-review-checklist。"
 ---
 
 # PR Description Writer
@@ -24,3 +24,15 @@ description: "根據 git diff、commit、修改檔案或使用者描述撰寫 Pu
 - 驗證步驟要列實際命令、手動檢查或 validator 結果。
 - 若涉及 ArcGIS、MSSQL、排程、API、Python 環境或部署設定，必須列入風險與注意事項。
 - 若 PR 只有文件變更，也要說明是否影響 runtime。
+
+## 交接資訊
+
+PR 描述結尾固定加入以下區塊；這只是手動交接摘要，不代表自動啟動下一個 Skill：
+
+- 目前階段：草稿、待 Review、待合併或待部署。
+- 已完成／已確認：變更目的、修改範圍與驗證結果。
+- 尚未確認／待決：Reviewer、部署環境或業務尚未確認事項。
+- 重要假設：版本、設定、資料與執行環境前提。
+- 主要風險：Runtime、資料、相容性、部署與回滾風險。
+- 建議下一步：Reviewer checklist、部署驗證或回滾準備。
+- 相關產物：Commit、測試命令、Build／Release 成品與設定變更。

@@ -1,0 +1,6 @@
+interface:
+  display_name: "GIS 資料流程運維"
+  short_description: "設計可重跑、可驗證的 GIS 與 ETL 資料流程"
+  default_prompt: "使用 $gis-data-pipeline-ops 設計這個 GIS／ETL 資料流程的執行、驗證與重跑方案。"
+policy:
+  allow_implicit_invocation: false

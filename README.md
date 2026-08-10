@@ -24,6 +24,7 @@
 | `adr-writer` | 將技術選型、架構取捨與方案比較整理成 ADR 技術決策紀錄。 |
 | `development-plan-writer` | 在技術選型與 ADR 後產出程式開發計畫框架，並可轉成 PM 確認用簡易流程。 |
 | `environment-setup-writer` | 整理專案必要軟體、設定檔、啟動方式、外部相依與環境驗證清單。 |
+| `gis-data-pipeline-ops` | 設計 GIS／ETL 資料流程、資料品質、批次追蹤、重跑、回滾與運維規則。 |
 | `test-generator` | 依程式碼與風險產生單元測試、整合測試、資料處理與排程測試建議。 |
 
 ## Repository Structure
@@ -38,6 +39,7 @@ personal-codex-skills/
 |   |-- dev-review-checklist/
 |   |-- development-plan-writer/
 |   |-- environment-setup-writer/
+|   |-- gis-data-pipeline-ops/
 |   |-- pr-description-writer/
 |   |-- tech-decision-tree/
 |   |-- test-generator/
@@ -89,7 +91,36 @@ $CODEX_HOME/skills/<skill-name>/
 請使用 $debug-tree 協助追查這個 ArcGIS REST API 回傳異常。
 ```
 
-Codex 也會依 `AGENTS.md` 與 skill metadata，在符合條件時自動選用對應 skill。
+這組工作 skill 預設不啟用 implicit invocation，避免只因為訊息出現 ArcGIS、MSSQL、API 或批次等關鍵字就自動載入。需要使用時請在訊息中明確指定，例如 `$debug-tree`、`$gis-data-pipeline-ops` 或 `$wiki-doc-writer`。
+
+## 工作流程與交接
+
+建議依工作目的手動指定 Skill；Skill 不會因為交接資訊而自動串接：
+
+| 工作目的 | 建議 Skill |
+|---|---|
+| 尚未決定技術或架構 | `tech-decision-tree` |
+| 記錄方案取捨與決策背景 | `adr-writer` |
+| 拆解實作階段與驗收方向 | `development-plan-writer` |
+| 設計 GIS／ETL 資料流程、資料品質、重跑與回滾 | `gis-data-pipeline-ops` |
+| 追查既有錯誤與根因 | `debug-tree` |
+| 規劃測試案例與 Mock Data | `test-generator` |
+| 審查修改、風險與測試缺口 | `dev-review-checklist` |
+| 撰寫 Pull Request 說明 | `pr-description-writer` |
+| 整理開發／執行環境 | `environment-setup-writer` |
+| 撰寫最終 Wiki 技術文件 | `wiki-doc-writer` |
+
+除 `wiki-doc-writer` 外，各工作 Skill 的輸出結尾應包含「交接資訊」：
+
+- 目前階段。
+- 已完成／已確認。
+- 尚未確認／待決。
+- 重要假設。
+- 主要風險。
+- 建議下一步。
+- 相關產物、檔案或驗證紀錄。
+
+Wiki 通常是流程最後的知識沉澱，因此不再產出跨 Skill 交接資訊，而是記錄「文件維護資訊」，包含文件狀態、來源檔案、適用版本、最後驗證日期與維護風險。
 
 ## Validation
 
@@ -105,6 +136,7 @@ python "$env:CODEX_HOME/skills/.system/skill-creator/scripts/quick_validate.py" 
 python "$env:CODEX_HOME/skills/.system/skill-creator/scripts/quick_validate.py" skills/adr-writer
 python "$env:CODEX_HOME/skills/.system/skill-creator/scripts/quick_validate.py" skills/development-plan-writer
 python "$env:CODEX_HOME/skills/.system/skill-creator/scripts/quick_validate.py" skills/environment-setup-writer
+python "$env:CODEX_HOME/skills/.system/skill-creator/scripts/quick_validate.py" skills/gis-data-pipeline-ops
 python "$env:CODEX_HOME/skills/.system/skill-creator/scripts/quick_validate.py" skills/test-generator
 ```
 

@@ -1,6 +1,6 @@
 ---
 name: wiki-doc-writer
-description: "依指定觸發關鍵字或程式特徵，為 ArcGIS Pro SDK ViewModel/DockPane/Add-in 類別、一般 Console/批次執行程式、MVC/Razor 網頁系統，或 Python 腳本/資料處理專案撰寫繁體中文 wiki 技術文件。使用於使用者輸入 Pro SDK wiki、ProSDK文件、ViewModel wiki、DockPane文件、ArcGIS Pro ViewModel、Pro SDK ViewModel、Console wiki、Console文件、批次程式文件、排程程式文件、一般Console、Console開法、MVC wiki、MVC文件、Razor wiki、Razor文件、Web系統文件、後台系統文件、Python wiki、Python文件、Python專案文件、腳本文件、資料處理文件、ETL文件、排程Python，或要求幫我寫 wiki、幫我整理文件時。"
+description: "依指定格式撰寫繁體中文 Wiki 技術文件。只在使用者明確要求 Wiki、技術文件、程式說明、維護文件或文件整理時使用；不要只因為看到 ViewModel、Controller、Console、Python、ETL、ArcGIS 或 Razor 就自動啟動。若使用者要的是設計、除錯、Review 或測試，請使用對應 skill。"
 ---
 
 # Wiki 技術文件撰寫
@@ -66,3 +66,15 @@ description: "依指定觸發關鍵字或程式特徵，為 ArcGIS Pro SDK ViewM
 - 是否包含錯誤處理或例外情境。
 - 是否包含「路徑與檔案」與「維護風險/維護建議」。
 - 是否避免推薦與文件對象無關的操作手冊內容。
+
+## 文件維護資訊
+
+Wiki 通常是工作流程的最終知識沉澱，不需要產出跨 Skill 的交接摘要。文件結尾改記錄以下維護資訊：
+
+- 文件狀態：草稿、待確認或已完成。
+- 文件範圍：涵蓋的程式、模組、流程與不負責範圍。
+- 來源檔案：主要程式檔案、設定檔、資料表或 API 文件。
+- 適用版本：程式版本、ArcGIS Pro／SDK、套件或資料結構版本。
+- 最後驗證日期：實際檢查或執行驗證的日期。
+- 維護風險：文件與程式不同步、未驗證流程或待補內容。
+- 維護提示：未來修改程式時需要同步更新的章節。

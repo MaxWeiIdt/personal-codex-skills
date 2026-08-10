@@ -1,6 +1,6 @@
 ---
 name: debug-tree
-description: "程式碼除錯與根因分析（RCA）決策樹。當程式碼編譯失敗、執行崩潰、邏輯錯誤、效能低落、測試不通過、排程失敗、MVC/Razor 畫面異常、ArcGIS Pro SDK/ArcGIS REST API/ArcGIS Experience/MSSQL/Python/React 發生問題，或使用者要求協助追查 bug、錯誤訊息、不能用、跑不起來時使用。"
+description: "程式碼除錯與根因分析（RCA）決策樹。只在使用者回報 bug、錯誤訊息、測試失敗、執行崩潰、排程失敗、結果不符預期或要求追查根因時使用；不要因為程式含有 ArcGIS、MSSQL、Python、API 或批次流程就自動啟動。單純設計流程請使用 gis-data-pipeline-ops，單純 Review 請使用 dev-review-checklist。"
 ---
 
 # Debug 決策樹
@@ -135,3 +135,15 @@ description: "程式碼除錯與根因分析（RCA）決策樹。當程式碼編
 | ArcGIS REST | Token 過期或 `498` | Token 更新、referer、Portal/Server 權限。 |
 | React | State 更新後 UI 未刷新 | 是否直接 mutate state，是否正確使用 setState。 |
 | Python/arcpy | Schema Lock | 是否有其他程式開啟資料，物件是否釋放。 |
+
+## 交接資訊
+
+除錯結案時固定加入以下區塊；這只是手動交接摘要，不代表自動啟動下一個 Skill：
+
+- 目前階段：調查中、已定位、已修復或待驗證。
+- 已完成／已確認：重現條件、根因與已排除的可能性。
+- 尚未確認／待決：無法重現、尚未取得或仍需確認的證據。
+- 重要假設：輸入資料、環境、版本或權限前提。
+- 主要風險：修正可能影響的流程與剩餘風險。
+- 建議下一步：例如使用 `test-generator` 補回歸測試，或使用 `wiki-doc-writer` 更新案例。
+- 相關產物：錯誤 Log、修正檔案、測試命令與驗證結果。

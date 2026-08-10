@@ -1,6 +1,6 @@
 ---
 name: dev-review-checklist
-description: "依專案技術棧進行開發審查與 review checklist。使用於使用者要求 code review、程式碼審查、review checklist、幫我檢查修改、檢查風險、上 PR 前檢查，或需要檢查 ArcGIS Pro SDK、ArcGIS REST API、MVC/Razor、C# Console、Python、MSSQL、NLog、排程、API 流程、資料處理流程的 bug、維護風險、安全性、重跑風險與缺漏測試時。"
+description: "依專案技術棧進行開發審查與 review checklist。只在使用者明確要求 code review、檢查 diff／修改、PR 前審查、風險檢查或缺漏測試時使用；不要因為程式含有 ArcGIS、MSSQL、API、排程或資料處理流程就自動啟動。若是實際錯誤根因請使用 debug-tree。"
 ---
 
 # 開發審查 Checklist
@@ -47,3 +47,15 @@ Findings 必須包含：
 - 對 ArcGIS Pro SDK，要特別注意 `QueuedTask`、UI thread、GDB lock、圖層狀態與事件取消。
 - 對 MVC/Razor，要特別注意 model binding、validation、權限、CSRF、SQL/查詢條件與前後端欄位同步。
 - 對 Console/Python 排程，要特別注意重跑 idempotency、log、exit code、環境路徑、設定與憑證。
+
+## 交接資訊
+
+Review 結尾固定加入以下區塊；這只是手動交接摘要，不代表自動啟動下一個 Skill：
+
+- 目前階段：檢查中、需修正、可合併或待補證據。
+- 已完成／已確認：已檢查範圍與沒有發現問題的區域。
+- 尚未確認／待決：需要作者補充說明或執行的檢查。
+- 重要假設：Review 使用的 diff、環境與需求前提。
+- 主要風險：Blocking／High／Medium／Low findings 與影響。
+- 建議下一步：修正項目、補測試或重新 Review。
+- 相關產物：Finding 位置、驗證命令與測試結果。

@@ -1,6 +1,6 @@
 ---
 name: adr-writer
-description: "撰寫 Architecture Decision Record（ADR）與技術決策紀錄。使用於使用者要求 ADR、架構決策紀錄、技術決策紀錄、記錄為什麼選這個方案、比較方案、決策背景、技術選型結論，或需要記錄 ArcGIS、.NET、MVC/Razor、Console、Python、MSSQL、API、部署、資料流與維護取捨時。"
+description: "撰寫 Architecture Decision Record（ADR）與技術決策紀錄。只在使用者明確要求記錄架構決策、比較方案、保存技術取捨或產出 ADR 時使用；不要因為需求提到 ArcGIS、MSSQL、API 或資料流就自動啟動。單純選型請使用 tech-decision-tree，單純開發拆解請使用 development-plan-writer。"
 ---
 
 # ADR Writer
@@ -24,3 +24,15 @@ description: "撰寫 Architecture Decision Record（ADR）與技術決策紀錄�
 - 狀態使用 `Proposed`、`Accepted`、`Deprecated`、`Superseded`。
 - 方案比較要包含不採用原因。
 - 對 ArcGIS/MSSQL/排程/API 類決策，要明確列出資料流、部署與維護風險。
+
+## 交接資訊
+
+文件結尾固定加入以下區塊；這只是手動交接摘要，不代表自動啟動下一個 Skill：
+
+- 目前階段：`Proposed`、`Accepted` 或其他狀態。
+- 已完成／已確認：決策內容、採用方案與不採用方案。
+- 尚未確認／待決：需要業務、PM 或環境確認的事項。
+- 重要假設：本 ADR 建立時採用的前提。
+- 主要風險：技術、資料、部署與維護風險。
+- 建議下一步：例如使用 `development-plan-writer` 拆解實作。
+- 相關產物：ADR 檔案、比較表、驗證紀錄或參考文件。
