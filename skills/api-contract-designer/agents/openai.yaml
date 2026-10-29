@@ -1,0 +1,6 @@
+interface:
+  display_name: "API 契約設計"
+  short_description: "定義 API 介接欄位、成功與錯誤回應，評估既有呼叫端的相容性"
+  default_prompt: "使用 $api-contract-designer 根據需求與既有程式設計 API 介接契約，標示現況、提案與待確認事項。"
+policy:
+  allow_implicit_invocation: false

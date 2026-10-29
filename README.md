@@ -22,9 +22,10 @@
 | `dev-review-checklist` | 依 ArcGIS、.NET、MVC/Razor、Console、Python、MSSQL 專案慣例進行 code review 與風險檢查。 |
 | `pr-description-writer` | 根據 diff 或修改內容產生 GitHub Pull Request 描述、驗證方式與風險說明。 |
 | `adr-writer` | 將技術選型、架構取捨與方案比較整理成 ADR 技術決策紀錄。 |
-| `development-plan-writer` | 在技術選型與 ADR 後產出程式開發計畫框架，並可轉成 PM 確認用簡易流程。 |
+| `development-plan-writer` | 產出工程開發計畫框架，或依需求評估產出供 PM 再次確認之需求確認計畫。 |
 | `environment-setup-writer` | 整理專案必要軟體、設定檔、啟動方式、外部相依與環境驗證清單。 |
 | `gis-data-pipeline-ops` | 設計 GIS／ETL 資料流程、資料品質、批次追蹤、重跑、回滾與運維規則。 |
+| `api-contract-designer` | 設計 API 介接契約，定義欄位、成功與錯誤回應、分頁及版本相容性，區分現況、提案與待確認事項。 |
 | `test-generator` | 依程式碼與風險產生單元測試、整合測試、資料處理與排程測試建議。 |
 
 ## Repository Structure
@@ -35,6 +36,7 @@ personal-codex-skills/
 |-- README.md
 |-- skills/
 |   |-- adr-writer/
+|   |-- api-contract-designer/
 |   |-- debug-tree/
 |   |-- dev-review-checklist/
 |   |-- development-plan-writer/
@@ -91,6 +93,10 @@ $CODEX_HOME/skills/<skill-name>/
 請使用 $debug-tree 協助追查這個 ArcGIS REST API 回傳異常。
 ```
 
+```text
+請使用 $api-contract-designer 根據 Controller 與 DTO 整理這個 API 的介接契約，列出欄位規則、錯誤回應與待確認事項。
+```
+
 這組工作 skill 預設不啟用 implicit invocation，避免只因為訊息出現 ArcGIS、MSSQL、API 或批次等關鍵字就自動載入。需要使用時請在訊息中明確指定，例如 `$debug-tree`、`$gis-data-pipeline-ops` 或 `$wiki-doc-writer`。
 
 ## 工作流程與交接
@@ -103,6 +109,7 @@ $CODEX_HOME/skills/<skill-name>/
 | 記錄方案取捨與決策背景 | `adr-writer` |
 | 拆解實作階段與驗收方向 | `development-plan-writer` |
 | 設計 GIS／ETL 資料流程、資料品質、重跑與回滾 | `gis-data-pipeline-ops` |
+| 定義 API 介接欄位、回應、錯誤規則與版本相容性 | `api-contract-designer` |
 | 追查既有錯誤與根因 | `debug-tree` |
 | 規劃測試案例與 Mock Data | `test-generator` |
 | 審查修改、風險與測試缺口 | `dev-review-checklist` |
@@ -137,6 +144,7 @@ python "$env:CODEX_HOME/skills/.system/skill-creator/scripts/quick_validate.py" 
 python "$env:CODEX_HOME/skills/.system/skill-creator/scripts/quick_validate.py" skills/development-plan-writer
 python "$env:CODEX_HOME/skills/.system/skill-creator/scripts/quick_validate.py" skills/environment-setup-writer
 python "$env:CODEX_HOME/skills/.system/skill-creator/scripts/quick_validate.py" skills/gis-data-pipeline-ops
+python "$env:CODEX_HOME/skills/.system/skill-creator/scripts/quick_validate.py" skills/api-contract-designer
 python "$env:CODEX_HOME/skills/.system/skill-creator/scripts/quick_validate.py" skills/test-generator
 ```
 
